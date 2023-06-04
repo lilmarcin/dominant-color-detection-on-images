@@ -19,26 +19,24 @@ This project is a web application that detects and displays the 5 dominant color
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/dominant-color-detection.git
+    ```bash
+    git clone https://github.com/your-username/dominant-color-detection.git
 
 2. Navigate to the project directory:
 
-bash
-
-cd dominant-color-detection
+    ```bash
+    cd dominant-color-detection
 
 3. Install the required dependencies:
 
-bash
-
+    ```bash
     pip install -r requirements.txt
 
 ## Usage
 
 1. Run the Flask application:
 
-    bash
+    ```bash
     python app.py
 
 2. Open a web browser and go to http://localhost:5000.
@@ -54,5 +52,5 @@ bash
 
 This project is inspired by the concept of color quantization and dominant color extraction. It utilizes the scikit-learn library for K-means clustering to identify the dominant colors in an image.
 
-License
+## License
 This project is licensed under the MIT License.
