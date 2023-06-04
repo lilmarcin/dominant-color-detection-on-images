@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Dominant colors</title>
+    <style>
+        .color-square {
+            width: 100px;
+            height: 100px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .color-percentage {
+        font-size: 25px;
+        font-weight: bold;
+        color: white; 
+        /* mix-blend-mode: difference;  */
+        }
+
+        .color-square.light .color-percentage {
+            color: black;
+        }
+    </style>
+    
+    
+    
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto mt-5 text-center">
+                <h1 class="mb-5">Dominant colors</h1>
+
+                <form method="POST" action="/">
+                    <input type="text" name="image_url" placeholder="Wprowadź adres URL obrazka" required>
+                    <button type="submit" class="btn btn-success">Upload</button>
+                </form>
+                {% if image_url %}
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <img src="{{ image_url }}" style="width: 400px;">
+                        </div>
+                    </div>
+                {% endif %}
+            </div> 
+        </div>
+    </div>
+    {% if dominant_colors %}
+    <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+            {% for color, percentage in dominant_colors %}
+            <div class="color-square {% if is_color_light(color) %}light{% endif %}" style="background-color: rgb{{ color }};">
+                <span class="color-percentage">{{ percentage }}%</span>
+            </div>
+        {% endfor %}
+        
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>

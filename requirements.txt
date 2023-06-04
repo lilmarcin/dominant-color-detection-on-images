@@ -1,0 +1,7 @@
+Flask>=2.3.2
+Flask-Uploads>=0.2.1
+Flask-WTF>=1.1.1
+wtforms>=3.0.1
+requests
+Pillow>=9.5.0
+Scikit-learn>=1.2.2
